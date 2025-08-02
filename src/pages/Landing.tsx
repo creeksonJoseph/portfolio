@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import AnimatedMenuButton from "@/components/AnimatedMenuButton";
-import FloatingSVGs from "@/components/FloatingSVGs";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const FloatingParticles = () => {
-  const [particles, setParticles] = useState<Array<{ id: number; x: number; y: number; delay: number }>>([]);
+  const [particles, setParticles] = useState<
+    Array<{ id: number; x: number; y: number; delay: number }>
+  >([]);
 
   useEffect(() => {
     const newParticles = Array.from({ length: 15 }, (_, i) => ({
@@ -45,25 +46,10 @@ const HourglassIcon = () => (
 );
 
 const Landing = () => {
-  const navigate = useNavigate();
-
-  const handleViewProjects = () => {
-    navigate('/gui');
-  };
-
-  const handleWhyHireMe = () => {
-    navigate('/gui', { state: { scrollTo: 'about' } });
-  };
-
-  const handleLetsTalk = () => {
-    navigate('/gui', { state: { scrollTo: 'contact' } });
-  };
-
   return (
     <div className="min-h-screen bg-background flex items-center justify-center relative overflow-hidden">
       <FloatingParticles />
-      <FloatingSVGs />
-      
+
       {/* Floating hourglass in corner */}
       <div className="absolute top-8 right-8 text-neon-green opacity-60">
         <HourglassIcon />
@@ -71,7 +57,7 @@ const Landing = () => {
 
       <div className="text-center z-10">
         {/* Main title with glitch effect */}
-        <h1 
+        <h1
           className="text-6xl md:text-8xl font-bold mb-8 glitch text-foreground"
           data-text="Welcome to Joseph's Haven"
         >
@@ -80,27 +66,30 @@ const Landing = () => {
 
         {/* Subtitle */}
         <p className="text-xl md:text-2xl mb-12 text-neon-green-glow font-gui">
-          Full-Stack Developer & UI Architect
+          Choose your experience: GUI or CMD
         </p>
 
-        {/* Animated menu button */}
-        <div className="mb-8">
-          <AnimatedMenuButton
-            onViewProjects={handleViewProjects}
-            onWhyHireMe={handleWhyHireMe}
-            onLetsTalk={handleLetsTalk}
-          />
-        </div>
+        {/* Mode selection buttons */}
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+          <Link to="/gui">
+            <Button
+              variant="default"
+              size="lg"
+              className="bg-primary hover:bg-primary-glow text-primary-foreground font-gui text-lg px-8 py-4 neon-glow transition-all duration-300 hover:scale-105"
+            >
+              GUI Mode
+            </Button>
+          </Link>
 
-        {/* Alternative mode links */}
-        <div className="text-sm text-muted-foreground">
-          <span>Or explore in </span>
-          <button 
-            onClick={() => navigate('/cmd')}
-            className="text-terminal-cursor hover:text-neon-yellow transition-colors underline"
-          >
-            Terminal Mode
-          </button>
+          <Link to="/cmd">
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-terminal-cursor text-terminal-cursor hover:bg-terminal-cursor hover:text-background font-mono text-lg px-8 py-4 terminal-glow transition-all duration-300 hover:scale-105"
+            >
+              CMD Mode
+            </Button>
+          </Link>
         </div>
       </div>
 
