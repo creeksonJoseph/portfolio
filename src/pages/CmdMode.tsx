@@ -11,34 +11,56 @@ const CmdMode = () => {
     {
       key: "a",
       name: "AniFinder",
+      synopsis: "Search and discover anime with previews & recommendations.",
       description:
-        "Search and explore anime with trailers and live streaming links.",
-      demo: "https://anifinder.live",
-      tech: "React, Jikan API, TypeScript",
+        "AniHaven is a dynamic content discovery platform that mimics the search and recommendation systems used by modern streaming services. It allows users to search anime titles, watch previews, view metadata, and discover recommendations based on trending content. Built this with JavaScript and powered by JIKAN API, a public API for anime. Main goal was to learn DOM manipulation and master the  REST API CRUD operations.",
+      demo: "https://creeksonjoseph.github.io/AniHaven/",
+      github: "https://github.com/creeksonJoseph/AniHaven",
+      tech: "React, TypeScript, Jikan API, Tailwind CSS",
     },
     {
       key: "b",
-      name: "BudgetBuddy",
+      name: "Books for books",
+      synopsis: "Browse, manage, and exchange books online.",
       description:
-        "Smart budgeting app with goal tracking and gamified dashboard.",
-      demo: "https://budgetbuddy.io",
-      tech: "React, Node.js, MongoDB",
+        "BOOK 4 BOOK is a modern web application designed to allow users to sign up, log in, browse and manage books, create reading playlists, and exchange books with others in the community.",
+      demo: "https://phase-2-project-group-kappa.vercel.app/",
+      github: "https://github.com/creeksonJoseph/phase-2-project-group",
+      tech: "React, Node.js, MongoDB, Chart.js",
     },
     {
       key: "c",
       name: "DeadTime",
+      synopsis: "Gamified productivity app with streaks and XP.",
       description:
-        "Gamified productivity app with streak system and XP rewards.",
+        "A gamified productivity app that makes completing tasks addictive with streaks and XP.",
       demo: "https://deadtime.dev",
-      tech: "React, Firebase, PWA",
+      github: "https://github.com/creeksonJoseph/404",
+      tech: "React, Firebase, PWA, Framer Motion",
+    },
+    {
+      key: "d",
+      name: "TaskFlow",
+      synopsis: "Real-time collaborative project management.",
+      description:
+        "Collaborative project management with real-time updates and team communication.",
+      demo: "https://taskflow.app",
+      github: "https://github.com/joseph/taskflow",
+      tech: "React, Socket.io, Express, PostgreSQL",
     },
   ];
 
   const introMessages = [
     "hi there...",
     "this is Joseph's Haven...",
-    "> Joseph - Fullstack Developer",
-    "Available commands: [1] View Projects | [2] Why Hire Me | [3] Let's Talk | [help] For commands guide",
+    "> Joseph is pleased to have you here",
+    "Available commands:",
+    "• [cd projects] - View Projects",
+    "• [cd about] - Why Hire Me",
+    "• [cd contacts] - Let's Talk",
+    "• [cd ..] - to go back",
+    "• [clear] - Clear the screen",
+    "• [help] - for commands guide",
   ];
 
   // Auto-scroll to bottom
@@ -71,17 +93,42 @@ const CmdMode = () => {
       return;
     }
 
+    // Handle cd ..
+    if (cmd === "cd ..") {
+      if (selectedSection === "projects") {
+        setSelectedSection(null);
+        output.push("Returned to main menu.....");
+      } else if (selectedSection?.startsWith("project-")) {
+        setSelectedSection("projects");
+        output.push("Back to projects list...");
+        projects.forEach((p) =>
+          output.push(`[${p.key.toUpperCase()}] ${p.name} - ${p.synopsis}`)
+        );
+        output.push(
+          "Type project letter to see details or 'cd ..' to go back."
+        );
+      } else {
+        output.push("Already at main menu.");
+      }
+
+      appendToHistory([`creekson@joseph$ ${raw}`, ...output]);
+      setInput("");
+      return;
+    }
+
     switch (cmd) {
-      case "1":
+      case "cd projects":
         setSelectedSection("projects");
         output.push("=== Projects === ");
         projects.forEach((p) =>
-          output.push(`[${p.key.toUpperCase()}] ${p.name} - ${p.description}`)
+          output.push(`[${p.key.toUpperCase()}] ${p.name} - ${p.synopsis}`)
         );
-        output.push("Type project letter to see details or 'b' to go back.");
+        output.push(
+          "Type project letter to see details or 'cd ..' to go back."
+        );
         break;
 
-      case "2":
+      case "cd about":
         setSelectedSection("why");
         output.push("=== Why Hire Joseph ===");
         output.push(
@@ -89,47 +136,44 @@ const CmdMode = () => {
         );
         output.push("Skills: HTML, JavaScript, React, Tailwind CSS");
         output.push("Tools: Git/GitHub, Figma, UI/UX");
-        output.push("[B] Press B to return to menu");
+        output.push("Type 'cd ..' to return to menu");
         break;
 
-      case "3":
+      case "cd contacts":
         setSelectedSection("contact");
         output.push("=== Let's Talk ===");
-        output.push("WhatsApp: https://wa.me/1234567890");
-        output.push("LinkedIn: https://linkedin.com/in/joseph");
-        output.push("Gmail: joseph@example.com");
-        output.push("GitHub: https://github.com/joseph");
-        output.push("[B] Press B to return to menu");
-        break;
-
-      case "b":
-      case "back":
-        setSelectedSection(null);
-        output.push("Returned to main menu.....");
+        output.push(
+          "LinkedIn: https://www.linkedin.com/in/joseph-charana-038328353/"
+        );
+        output.push("Gmail: charanajoseph@gmail.com");
+        output.push("GitHub: https://github.com/creeksonJoseph");
+        output.push("Type 'cd ..' to return to menu");
         break;
 
       case "help":
         output.push("=== Help ===");
-        output.push("[1] View Projects");
-        output.push("[2] Why Hire Me");
-        output.push("[3] Let's Talk");
-        output.push("[clear] Clear the screen");
-        output.push("[b] Back to menu");
+        output.push("[cd projects] - View Projects");
+        output.push("[cd about] - Why Hire Me");
+        output.push("[cd contacts] - Let's Talk");
+        output.push("[clear] - Clear the screen");
+        output.push("[cd ..] - To go back");
         break;
 
       default:
-        // Project selection
         if (selectedSection === "projects") {
           const project = projects.find((p) => p.key === cmd);
           if (project) {
+            setSelectedSection(`project-${project.key}`);
             output.push(`=== Project: ${project.name} ===`);
             output.push(`Description: ${project.description}`);
             output.push(`Tech Stack: ${project.tech}`);
             output.push(`Live Demo -> ${project.demo}`);
-            output.push("GitHub -> Pinned on my profile");
-            output.push("[B] Press B to return to projects");
+            output.push(`GitHub -> ${project.github}`);
+            output.push("Type 'cd ..' to return to projects");
           } else {
-            output.push("Invalid project key. Type 'b' to go back.");
+            output.push(
+              "Invalid project key. Type 'cd ..' to go back or project letter to view a project."
+            );
           }
         } else {
           output.push(`Command not recognized: ${raw}`);
@@ -137,7 +181,7 @@ const CmdMode = () => {
         }
     }
 
-    appendToHistory([`joseph@haven$ ${raw}`, ...output]);
+    appendToHistory([`creekson@joseph$ ${raw}`, ...output]);
     setInput("");
   };
 
@@ -167,61 +211,64 @@ const CmdMode = () => {
 
   return (
     <div className="min-h-screen bg-background p-4 flex items-center justify-center">
-      <div className="terminal-window rounded-lg p-6 max-w-4xl w-full max-h-[80vh] overflow-y-auto font-mono text-terminal-text">
-        {/* Fake Mac buttons */}
-        <div className="flex items-center gap-2 mb-4 pb-2 border-b border-neon-green">
-          <div className="w-3 h-3 rounded-full bg-red-500"></div>
-          <div className="w-3 h-3 rounded-full bg-neon-yellow"></div>
-          <div className="w-3 h-3 rounded-full bg-neon-green"></div>
-          <span className="ml-4 text-terminal-text text-sm">
-            Terminal - Joseph's Haven
-          </span>
+      <div className="terminal-window pt-0 rounded-lg max-w-4xl w-full max-h-[80vh] overflow-y-auto font-mono text-terminal-text">
+        {/* Sticky Header */}
+        <div className="sticky top-0 items-center bg-yellow-900 z-10">
+          <div className="flex items-center justify-start gap-2 mb-4 pt-2 pb-2 border-b border-neon-green">
+            <div className="w-3 h-3 rounded-full bg-red-500"></div>
+            <div className="w-3 h-3 rounded-full bg-neon-yellow"></div>
+            <div className="w-3 h-3 rounded-full bg-neon-green"></div>
+            <span className="ml-4 text-terminal-text text-sm">
+              Terminal - Joseph's Haven
+            </span>
+          </div>
         </div>
+        <div className="px-4 pt-4">
+          {/* History */}
+          {history.map((line, i) => {
+            const safeLine = String(line || "");
+            const colorClass = safeLine.startsWith("===")
+              ? "text-neon-yellow"
+              : safeLine.startsWith("[") || safeLine.startsWith(">")
+                ? "text-neon-green"
+                : "";
+            return (
+              <div key={i} className={colorClass}>
+                {safeLine}
+              </div>
+            );
+          })}
 
-        {/* History */}
-        {history.map((line, i) => {
-          const safeLine = String(line || "");
-          const colorClass = safeLine.startsWith("===")
-            ? "text-neon-yellow"
-            : safeLine.startsWith("[") || safeLine.startsWith(">")
-              ? "text-neon-green"
-              : "";
-          return (
-            <div key={i} className={colorClass}>
-              {safeLine}
-            </div>
-          );
-        })}
+          {/* Input with blinking cursor */}
+          <div className="flex items-center mt-2">
+            <span className="text-neon-green">creekson@joseph$</span>
+            <input
+              autoFocus
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={handleKeyDown}
+              className="bg-transparent outline-none ml-2 flex-1 text-terminal-text blinking-cursor"
+            />
+          </div>
 
-        {/* Input */}
-        <div className="flex items-center mt-2">
-          <span className="text-neon-green">joseph@haven$</span>
-          <input
-            autoFocus
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={handleKeyDown}
-            className="bg-transparent outline-none ml-2 flex-1 text-terminal-text"
-          />
-        </div>
+          <div ref={bottomRef} />
 
-        <div ref={bottomRef} />
-
-        {/* Bottom navigation */}
-        <div className="mt-8 pt-4 border-t border-neon-green text-sm">
-          <Link
-            to="/gui"
-            className="text-neon-yellow hover:text-neon-green transition-colors"
-          >
-            Switch to GUI Mode
-          </Link>
-          <span className="mx-4 text-gray-500">|</span>
-          <Link
-            to="/"
-            className="text-neon-yellow hover:text-neon-green transition-colors"
-          >
-            Home
-          </Link>
+          {/* Bottom navigation */}
+          <div className="mt-8 pt-4 border-t border-neon-green text-sm">
+            <Link
+              to="/gui"
+              className="text-neon-yellow hover:text-neon-green transition-colors"
+            >
+              Switch to GUI Mode
+            </Link>
+            <span className="mx-4 text-gray-500">|</span>
+            <Link
+              to="/"
+              className="text-neon-yellow hover:text-neon-green transition-colors"
+            >
+              Home
+            </Link>
+          </div>
         </div>
       </div>
     </div>

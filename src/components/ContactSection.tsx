@@ -4,27 +4,27 @@ const contacts = [
   {
     name: "WhatsApp",
     icon: MessageCircle,
-    href: "https://wa.me/1234567890", // Replace with actual WhatsApp number
-    color: "text-neon-green hover:text-neon-green-glow"
+    href: "https://wa.me/0782295126",
+    color: "text-neon-green hover:text-neon-green-glow",
   },
   {
     name: "LinkedIn",
     icon: Linkedin,
-    href: "https://linkedin.com/in/joseph", // Replace with actual LinkedIn
-    color: "text-neon-yellow hover:text-neon-yellow-glow"
+    href: "https://www.linkedin.com/in/joseph-charana-038328353/",
+    color: "text-neon-yellow hover:text-neon-yellow-glow",
   },
   {
     name: "Gmail",
     icon: Mail,
-    href: "mailto:joseph@example.com", // Replace with actual email
-    color: "text-neon-green hover:text-neon-green-glow"
+    href: "mailto:charanajoseph@gmail.com",
+    color: "text-neon-green hover:text-neon-green-glow",
   },
   {
     name: "GitHub",
     icon: Github,
-    href: "https://github.com/joseph", // Replace with actual GitHub
-    color: "text-terminal-cursor hover:text-neon-yellow-glow"
-  }
+    href: "https://github.com/creeksonJoseph",
+    color: "text-terminal-cursor hover:text-neon-yellow-glow",
+  },
 ];
 
 const ContactSection = () => {
@@ -35,7 +35,7 @@ const ContactSection = () => {
         <h2 className="text-4xl md:text-5xl font-gui font-bold mb-16 text-neon-green">
           Let's Talk
         </h2>
-        
+
         {/* Contact Icons */}
         <div className="flex flex-wrap justify-center gap-8">
           {contacts.map((contact, index) => (
@@ -46,7 +46,7 @@ const ContactSection = () => {
               rel="noopener noreferrer"
               className={`group ${contact.color} transition-all duration-300 hover:scale-110`}
               style={{
-                animation: `fadeIn 0.6s ease-out ${index * 0.1 + 0.2}s both`
+                animation: `fadeIn 0.6s ease-out ${index * 0.1 + 0.2}s both`,
               }}
             >
               <div className="flex flex-col items-center space-y-3 p-6 bg-card border border-neon-green/30 rounded-lg hover:border-current hover:shadow-lg hover:shadow-current/20">

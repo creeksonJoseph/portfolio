@@ -1,6 +1,14 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { FaReact, FaNodeJs, FaGitAlt } from "react-icons/fa";
+import {
+  SiTailwindcss,
+  SiTypescript,
+  SiMongodb,
+  SiPostgresql,
+} from "react-icons/si";
+
 import {
   Card,
   CardContent,
@@ -88,10 +96,22 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
       </CardHeader>
       <CardContent>
         <div className="space-y-4">
-          <div className="w-full h-48 bg-muted rounded-lg flex items-center justify-center border border-neon-green/30">
-            <div className="text-center text-muted-foreground">
-              <div className="text-sm font-mono">{project.name} Screenshot</div>
-              <div className="text-xs mt-1">{project.tech}</div>
+          <div className="space-y-4">
+            <div className="w-full h-48 bg-muted rounded-lg flex items-center justify-center border border-neon-green/30 overflow-hidden">
+              {project.imageUrl ? (
+                <img
+                  src={project.imageUrl}
+                  alt={`${project.name} screenshot`}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <div className="text-center text-muted-foreground">
+                  <div className="text-sm font-mono">
+                    {project.name} Screenshot
+                  </div>
+                  <div className="text-xs mt-1">{project.tech}</div>
+                </div>
+              )}
             </div>
           </div>
 
@@ -162,25 +182,27 @@ const GuiMode = () => {
     {
       name: "AniFinder",
       description:
-        "A React SPA to search, explore, and watch anime trailers using the Jikan API.",
-      demo: "https://anifinder.live",
-      github: "https://github.com/joseph/anifinder",
+        "AniHaven is a dynamic content discovery platform that mimics the search and recommendation systems used by modern streaming services. It allows users to search anime titles, watch previews, view metadata, and discover recommendations based on trending content. Built this with JavaScript and powered by JIKAN API, a public API for anime.Main goal was to learn DOM manipulation and master the Full REST API CRUD operations.",
+      demo: "https://creeksonjoseph.github.io/AniHaven/",
+      github: "https://github.com/creeksonJoseph/AniHaven",
       tech: "React, TypeScript, Jikan API, Tailwind CSS",
+      imageUrl: "/public/home.png",
     },
     {
-      name: "BudgetBuddy",
+      name: "Books for books",
       description:
-        "A goal-driven budgeting app that tracks expenses and gives insights in a fun gamified dashboard.",
-      demo: "https://budgetbuddy.io",
-      github: "https://github.com/joseph/budgetbuddy",
+        "BOOK 4 BOOK is a modern web application designed to allow users to sign up, log in, browse and manage books, create reading playlists, and exchange books with others in the community.",
+      demo: "https://phase-2-project-group-kappa.vercel.app/",
+      github: "https://github.com/creeksonJoseph/phase-2-project-group",
       tech: "React, Node.js, MongoDB, Chart.js",
+      imageUrl: "public/books4books.png",
     },
     {
       name: "DeadTime",
       description:
         "A gamified productivity app that makes completing tasks addictive with streaks and XP.",
       demo: "https://deadtime.dev",
-      github: "https://github.com/joseph/deadtime",
+      github: "https://github.com/creeksonJoseph/404",
       tech: "React, Firebase, PWA, Framer Motion",
     },
     {

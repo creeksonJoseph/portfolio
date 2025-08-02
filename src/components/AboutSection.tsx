@@ -1,15 +1,17 @@
-import { Code, Brackets, Paintbrush2, GitBranch } from "lucide-react";
+import { FaHtml5, FaReact, FaGitAlt, FaFigma } from "react-icons/fa";
+import { IoLogoJavascript } from "react-icons/io";
+import { SiTailwindcss } from "react-icons/si";
 
 const skills = [
-  { name: "HTML", icon: Code },
-  { name: "JavaScript", icon: Brackets },
-  { name: "React", icon: Brackets },
-  { name: "Tailwind CSS", icon: Paintbrush2 }
+  { name: "HTML", icon: FaHtml5 },
+  { name: "JavaScript", icon: IoLogoJavascript },
+  { name: "React", icon: FaReact },
+  { name: "Tailwind CSS", icon: SiTailwindcss },
 ];
 
 const tools = [
-  { name: "Git/GitHub", icon: GitBranch },
-  { name: "Figma", icon: Paintbrush2 }
+  { name: "Git/GitHub", icon: FaGitAlt },
+  { name: "Figma", icon: FaFigma },
 ];
 
 const AboutSection = () => {
@@ -20,10 +22,11 @@ const AboutSection = () => {
         <h2 className="text-4xl md:text-5xl font-gui font-bold text-center mb-8 text-neon-green">
           Why Hire Me
         </h2>
-        
+
         {/* Description */}
         <p className="text-xl md:text-2xl text-center mb-16 text-foreground font-gui max-w-4xl mx-auto">
-          I craft sleek, high-performance web apps with next-level UI using JavaScript, React, and Tailwind CSS.
+          I craft sleek, high-performance web apps with next-level UI using
+          JavaScript, React, and Tailwind CSS.
         </p>
 
         {/* Skills and Tools */}
@@ -39,12 +42,14 @@ const AboutSection = () => {
                   key={skill.name}
                   className="bg-card border border-neon-green/30 rounded-lg p-6 hover:border-neon-green transition-all duration-300 hover:scale-105 group"
                   style={{
-                    animation: `fadeIn 0.6s ease-out ${index * 0.1 + 0.2}s both`
+                    animation: `fadeIn 0.6s ease-out ${index * 0.1 + 0.2}s both`,
                   }}
                 >
                   <div className="flex flex-col items-center text-center">
-                    <skill.icon className="w-12 h-12 text-neon-green mb-4 group-hover:text-neon-green-glow transition-colors" />
-                    <span className="text-foreground font-gui font-medium">{skill.name}</span>
+                    <skill.icon className="w-12 h-12 text-neon-green mb-4 transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_15px_hsl(var(--neon-green)/0.9)]" />
+                    <span className="text-foreground font-gui font-medium">
+                      {skill.name}
+                    </span>
                   </div>
                 </div>
               ))}
@@ -62,12 +67,14 @@ const AboutSection = () => {
                   key={tool.name}
                   className="bg-card border border-neon-green/30 rounded-lg p-6 hover:border-neon-green transition-all duration-300 hover:scale-105 group"
                   style={{
-                    animation: `fadeIn 0.6s ease-out ${index * 0.1 + 0.6}s both`
+                    animation: `fadeIn 0.6s ease-out ${index * 0.1 + 0.6}s both`,
                   }}
                 >
                   <div className="flex flex-col items-center text-center">
-                    <tool.icon className="w-12 h-12 text-neon-green mb-4 group-hover:text-neon-green-glow transition-colors" />
-                    <span className="text-foreground font-gui font-medium">{tool.name}</span>
+                    <tool.icon className="w-12 h-12 text-neon-green mb-4 transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_15px_hsl(var(--neon-green)/0.9)]" />
+                    <span className="text-foreground font-gui font-medium">
+                      {tool.name}
+                    </span>
                   </div>
                 </div>
               ))}

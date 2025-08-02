@@ -342,3 +342,23 @@ All colors MUST be HSL. Retro hacker + modern neon aesthetic.
 .animate-spin-slow {
   animation: spin-slow 4s linear infinite;
 }
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.blinking-cursor::after {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 1em;
+  background: currentColor;
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+}
