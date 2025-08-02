@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import TerminalInput from "@/components/TerminalInput";
+import CommandButtons from "@/components/CommandButtons";
 
 const TypewriterText = ({ text, onComplete }: { text: string; onComplete?: () => void }) => {
   const [displayText, setDisplayText] = useState("");
@@ -88,6 +90,32 @@ const CmdMode = () => {
     setSelectedProject(projectName);
   };
 
+  const handleCommand = (command: string) => {
+    const cmd = command.toLowerCase();
+    
+    switch (cmd) {
+      case '1':
+        setSelectedProject("menu");
+        break;
+      case '2':
+        setSelectedProject("why-hire-me");
+        break;
+      case '3':
+        setSelectedProject("lets-talk");
+        break;
+      case 'h':
+      case 'home':
+        setSelectedProject(null);
+        break;
+      case 'help':
+        setSelectedProject("help");
+        break;
+      default:
+        // Invalid command - could show error message
+        break;
+    }
+  };
+
   const selectedProjectData = projects.find(p => p.name === selectedProject);
 
   return (
@@ -116,6 +144,14 @@ const CmdMode = () => {
             </div>
           ))}
 
+          {/* Terminal Input */}
+          {showMenu && (
+            <div className="mt-6 border-t border-neon-green pt-4">
+              <TerminalInput onCommand={handleCommand} />
+              <CommandButtons onCommand={handleCommand} />
+            </div>
+          )}
+
           {/* Menu options */}
           {showMenu && !selectedProject && (
             <div className="mt-6 space-y-2">
@@ -126,11 +162,17 @@ const CmdMode = () => {
               >
                 [1] View his creations
               </div>
-              <div className="cursor-pointer hover:text-neon-green transition-colors">
+              <div 
+                className="cursor-pointer hover:text-neon-green transition-colors"
+                onClick={() => handleProjectSelect("why-hire-me")}
+              >
                 [2] Why hire Joseph?
               </div>
-              <div className="cursor-pointer hover:text-neon-green transition-colors">
-                [3] HMU
+              <div 
+                className="cursor-pointer hover:text-neon-green transition-colors"
+                onClick={() => handleProjectSelect("lets-talk")}
+              >
+                [3] Let's Talk
               </div>
               <div className="mt-4 text-gray-500 text-sm animate-pulse">
                 {idleMessages[currentIdleMessage]}
@@ -151,6 +193,73 @@ const CmdMode = () => {
                   <span className="text-neon-yellow">[{index + 1}]</span> {project.name} - {project.description.split('.')[0]}
                 </div>
               ))}
+              <div 
+                className="cursor-pointer hover:text-neon-green transition-colors text-gray-400 mt-4"
+                onClick={() => setSelectedProject(null)}
+              >
+                [B] Back to main menu
+              </div>
+            </div>
+          )}
+
+          {/* Why Hire Me */}
+          {selectedProject === "why-hire-me" && (
+            <div className="mt-6 space-y-4">
+              <div className="text-neon-yellow">Why Hire Joseph?</div>
+              <div className="text-foreground">
+                I craft sleek, high-performance web apps with next-level UI using JavaScript, React, and Tailwind CSS.
+              </div>
+              <div className="text-neon-green">Skills:</div>
+              <div className="pl-4">
+                <div>• HTML - Semantic markup & accessibility</div>
+                <div>• JavaScript - Modern ES6+ & async programming</div>
+                <div>• React - Component architecture & state management</div>
+                <div>• Tailwind CSS - Utility-first responsive design</div>
+              </div>
+              <div className="text-neon-green">Tools:</div>
+              <div className="pl-4">
+                <div>• Git/GitHub - Version control & collaboration</div>
+                <div>• Figma - UI/UX design & prototyping</div>
+              </div>
+              <div 
+                className="cursor-pointer hover:text-neon-green transition-colors text-gray-400 mt-4"
+                onClick={() => setSelectedProject(null)}
+              >
+                [B] Back to main menu
+              </div>
+            </div>
+          )}
+
+          {/* Let's Talk */}
+          {selectedProject === "lets-talk" && (
+            <div className="mt-6 space-y-4">
+              <div className="text-neon-yellow">Let's Talk - Contact Information</div>
+              <div className="space-y-2">
+                <div className="text-neon-green">WhatsApp: https://wa.me/1234567890</div>
+                <div className="text-neon-green">LinkedIn: https://linkedin.com/in/joseph</div>
+                <div className="text-neon-green">Gmail: joseph@example.com</div>
+                <div className="text-neon-green">GitHub: https://github.com/joseph</div>
+              </div>
+              <div 
+                className="cursor-pointer hover:text-neon-green transition-colors text-gray-400 mt-4"
+                onClick={() => setSelectedProject(null)}
+              >
+                [B] Back to main menu
+              </div>
+            </div>
+          )}
+
+          {/* Help */}
+          {selectedProject === "help" && (
+            <div className="mt-6 space-y-2">
+              <div className="text-neon-yellow">Available Commands:</div>
+              <div className="pl-4 space-y-1">
+                <div>[1] or "1" - View Projects</div>
+                <div>[2] or "2" - Why Hire Me</div>
+                <div>[3] or "3" - Let's Talk</div>
+                <div>[h] or "home" - Return to main menu</div>
+                <div>[help] - Show this help</div>
+              </div>
               <div 
                 className="cursor-pointer hover:text-neon-green transition-colors text-gray-400 mt-4"
                 onClick={() => setSelectedProject(null)}

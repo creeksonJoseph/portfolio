@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ExternalLink, Github, Terminal } from "lucide-react";
+import FloatingSVGs from "@/components/FloatingSVGs";
+import AboutSection from "@/components/AboutSection";
+import ContactSection from "@/components/ContactSection";
 
 const FloatingBinaryParticles = () => {
   const [particles, setParticles] = useState<Array<{ id: number; x: number; y: number; delay: number; binary: string }>>([]);
@@ -89,7 +92,7 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
               className="border-neon-yellow text-neon-yellow hover:bg-neon-yellow hover:text-background"
               onClick={(e) => {
                 e.stopPropagation();
-                // Would open GitHub profile
+                window.open(project.github, '_blank');
               }}
             >
               <Github className="w-4 h-4 mr-2" />
@@ -104,17 +107,32 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
 
 const GuiMode = () => {
   const [headerVisible, setHeaderVisible] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const timer = setTimeout(() => setHeaderVisible(true), 500);
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    // Handle navigation from landing page
+    if (location.state?.scrollTo) {
+      const timer = setTimeout(() => {
+        const element = document.getElementById(location.state.scrollTo);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [location.state]);
+
   const projects = [
     {
       name: "AniFinder",
       description: "A React SPA to search, explore, and watch anime trailers using the Jikan API.",
       demo: "https://anifinder.live",
+      github: "https://github.com/joseph/anifinder",
       tech: "React, TypeScript, Jikan API, Tailwind CSS",
       image: "/api/placeholder/400/200"
     },
@@ -122,6 +140,7 @@ const GuiMode = () => {
       name: "BudgetBuddy", 
       description: "A goal-driven budgeting app that tracks expenses and gives insights in a fun gamified dashboard.",
       demo: "https://budgetbuddy.io",
+      github: "https://github.com/joseph/budgetbuddy",
       tech: "React, Node.js, MongoDB, Chart.js",
       image: "/api/placeholder/400/200"
     },
@@ -129,7 +148,24 @@ const GuiMode = () => {
       name: "DeadTime",
       description: "A gamified productivity app that makes completing tasks addictive with streaks and XP.",
       demo: "https://deadtime.dev", 
+      github: "https://github.com/joseph/deadtime",
       tech: "React, Firebase, PWA, Framer Motion",
+      image: "/api/placeholder/400/200"
+    },
+    {
+      name: "TaskFlow",
+      description: "Collaborative project management with real-time updates and team communication.",
+      demo: "https://taskflow.app",
+      github: "https://github.com/joseph/taskflow",
+      tech: "React, Socket.io, Express, PostgreSQL",
+      image: "/api/placeholder/400/200"
+    },
+    {
+      name: "CodeSnippet",
+      description: "Developer tool for organizing and sharing code snippets with syntax highlighting.",
+      demo: "https://codesnippet.dev",
+      github: "https://github.com/joseph/codesnippet",
+      tech: "React, Prism.js, Firebase, Material-UI",
       image: "/api/placeholder/400/200"
     }
   ];
@@ -137,6 +173,7 @@ const GuiMode = () => {
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
       <FloatingBinaryParticles />
+      <FloatingSVGs />
       
       {/* Header */}
       <header className="relative z-10 p-8">
@@ -150,7 +187,7 @@ const GuiMode = () => {
                 textShadow: '0 0 20px hsl(var(--neon-green) / 0.5)'
               }}
             >
-              Hey! You've reached Joseph's Haven
+              Joseph's Haven
             </h1>
             <Link to="/cmd">
               <Button 
@@ -165,10 +202,13 @@ const GuiMode = () => {
         </div>
       </header>
 
+      {/* About Section */}
+      <AboutSection />
+
       {/* Projects Grid */}
-      <main className="relative z-10 p-8">
+      <section id="projects" className="relative z-10 py-20 px-8">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl font-gui font-semibold text-neon-green mb-8 text-center">
+          <h2 className="text-4xl md:text-5xl font-gui font-bold text-neon-green mb-16 text-center">
             Featured Projects
           </h2>
           
@@ -178,7 +218,10 @@ const GuiMode = () => {
             ))}
           </div>
         </div>
-      </main>
+      </section>
+
+      {/* Contact Section */}
+      <ContactSection />
 
       {/* Navigation */}
       <footer className="relative z-10 p-8">
