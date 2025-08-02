@@ -54,7 +54,9 @@ const Landing = () => {
       <div className="absolute top-8 right-8 text-neon-green opacity-60">
         <HourglassIcon />
       </div>
-
+      <div className="absolute top-8 right-8 text-neon-green opacity-60">
+        <HourglassIcon />
+      </div>
       <div className="text-center z-10">
         {/* Main title with glitch effect */}
         <h1
@@ -66,7 +68,7 @@ const Landing = () => {
 
         {/* Subtitle */}
         <p className="text-xl md:text-2xl mb-12 text-neon-green-glow font-gui">
-          Choose your experience: GUI or CMD
+          Choose your experience: GUI or terminal
         </p>
 
         {/* Mode selection buttons */}
@@ -87,7 +89,7 @@ const Landing = () => {
               size="lg"
               className="border-terminal-cursor text-terminal-cursor hover:bg-terminal-cursor hover:text-background font-mono text-lg px-8 py-4 terminal-glow transition-all duration-300 hover:scale-105"
             >
-              CMD Mode
+              Terminal Mode
             </Button>
           </Link>
         </div>

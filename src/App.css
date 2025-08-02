@@ -5,6 +5,7 @@
   text-align: center;
 }
 
+/* Logo default (optional if you keep Vite's) */
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -18,7 +19,8 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-@keyframes logo-spin {
+/* Slow spin animation */
+@keyframes spin-slow {
   from {
     transform: rotate(0deg);
   }
@@ -26,11 +28,8 @@
     transform: rotate(360deg);
   }
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.animate-spin-slow {
+  animation: spin-slow 4s linear infinite;
 }
 
 .card {
