@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { FaReact, FaNodeJs, FaGitAlt } from "react-icons/fa";
+import homeImage from "@/public/home.png";
+import books from "@/public/books4books.png";
 import {
   SiTailwindcss,
   SiTypescript,
@@ -186,7 +188,7 @@ const GuiMode = () => {
       demo: "https://creeksonjoseph.github.io/AniHaven/",
       github: "https://github.com/creeksonJoseph/AniHaven",
       tech: "React, TypeScript, Jikan API, Tailwind CSS",
-      imageUrl: "/public/home.png",
+      imageUrl: homeImage,
     },
     {
       name: "Books for books",
@@ -195,7 +197,7 @@ const GuiMode = () => {
       demo: "https://phase-2-project-group-kappa.vercel.app/",
       github: "https://github.com/creeksonJoseph/phase-2-project-group",
       tech: "React, Node.js, MongoDB, Chart.js",
-      imageUrl: "public/books4books.png",
+      imageUrl: books,
     },
     {
       name: "DeadTime",
