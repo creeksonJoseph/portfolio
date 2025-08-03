@@ -132,10 +132,10 @@ const CmdMode = () => {
         setSelectedSection("why");
         output.push("=== Why Hire Joseph ===");
         output.push(
-          "I craft sleek, high-performance web apps with React + Tailwind."
+          "I craft sleek, high-performance and responsive web apps with React + Tailwind."
         );
         output.push("Skills: HTML, JavaScript, React, Tailwind CSS");
-        output.push("Tools: Git/GitHub, Figma, UI/UX");
+        output.push("Tools: Git/GitHub, Figma for UX/UI design");
         output.push("Type 'cd ..' to return to menu");
         break;
 
@@ -172,7 +172,7 @@ const CmdMode = () => {
             output.push("Type 'cd ..' to return to projects");
           } else {
             output.push(
-              "Invalid project key. Type 'cd ..' to go back or project letter to view a project."
+              "Invalid project key. Type 'cd ..' to go back or a project letter to view a project."
             );
           }
         } else {
