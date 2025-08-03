@@ -46,56 +46,79 @@ const HourglassIcon = () => (
 );
 
 const Landing = () => {
+  const fullText = "Welcome to Joseph’s Haven"; // ✅ exact sentence
+  const characters = Array.from(fullText); // handles special apostrophes correctly
+
+  const [displayText, setDisplayText] = useState("");
+  const [showContent, setShowContent] = useState(false);
+
+  useEffect(() => {
+    let index = 0;
+
+    const typeNext = () => {
+      if (index < characters.length) {
+        const nextChar = characters[index] ?? ""; // guard against undefined
+        setDisplayText((prev) => prev + nextChar);
+        index++;
+        setTimeout(typeNext, 120); // typing speed
+      } else {
+        setTimeout(() => setShowContent(true), 400); // small pause after typing
+      }
+    };
+
+    typeNext(); // start typing on mount
+  }, []);
+
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center relative overflow-hidden">
+    <div className="min-h-screen bg-background flex items-center justify-center relative overflow-hidden px-4">
       <FloatingParticles />
 
-      {/* Floating hourglass in corner */}
+      {/* Floating hourglass */}
       <div className="absolute top-8 right-8 text-neon-green opacity-60">
         <HourglassIcon />
       </div>
-      <div className="absolute top-8 right-8 text-neon-green opacity-60">
-        <HourglassIcon />
-      </div>
-      <div className="text-center z-10">
-        {/* Main title with glitch effect */}
+
+      <div className="text-center z-10 max-w-full">
+        {/* Typewriter title */}
         <h1
-          className="text-6xl md:text-8xl font-bold mb-8 glitch text-foreground"
-          data-text="Welcome to Joseph's Haven"
+          className="text-4xl sm:text-6xl md:text-8xl font-bold mb-8 glitch text-foreground transition-all duration-500 break-words"
+          data-text={displayText}
         >
-          Welcome to Joseph's Haven
+          {displayText}
         </h1>
 
-        {/* Subtitle */}
-        <p className="text-xl md:text-2xl mb-12 text-neon-green-glow font-gui">
-          Choose your experience: GUI or terminal
-        </p>
+        {showContent && (
+          <>
+            <p className="text-lg sm:text-xl md:text-2xl mb-12 text-neon-green-glow font-gui animate-fade-in-up px-2">
+              Choose your experience: GUI or terminal
+            </p>
 
-        {/* Mode selection buttons */}
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-          <Link to="/gui">
-            <Button
-              variant="default"
-              size="lg"
-              className="bg-primary hover:bg-primary-glow text-primary-foreground font-gui text-lg px-8 py-4 neon-glow transition-all duration-300 hover:scale-105"
-            >
-              GUI Mode
-            </Button>
-          </Link>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in-up delay-200">
+              <Link to="/gui">
+                <Button
+                  variant="default"
+                  size="lg"
+                  className="bg-primary hover:bg-primary-glow text-primary-foreground font-gui text-lg px-8 py-4 neon-glow transition-all duration-300 hover:scale-105"
+                >
+                  GUI Mode
+                </Button>
+              </Link>
 
-          <Link to="/cmd">
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-terminal-cursor text-terminal-cursor hover:bg-terminal-cursor hover:text-background font-mono text-lg px-8 py-4 terminal-glow transition-all duration-300 hover:scale-105"
-            >
-              Terminal Mode
-            </Button>
-          </Link>
-        </div>
+              <Link to="/cmd">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-terminal-cursor text-terminal-cursor hover:bg-terminal-cursor hover:text-background font-mono text-lg px-8 py-4 terminal-glow transition-all duration-300 hover:scale-105"
+                >
+                  Terminal Mode
+                </Button>
+              </Link>
+            </div>
+          </>
+        )}
       </div>
 
-      {/* Subtle scanlines effect */}
+      {/* Scanlines */}
       <div className="absolute inset-0 pointer-events-none opacity-10">
         <div className="h-full w-full bg-gradient-to-b from-transparent via-neon-green to-transparent bg-[length:100%_4px] animate-pulse" />
       </div>
