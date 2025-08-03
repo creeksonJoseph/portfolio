@@ -2,14 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { FaReact, FaNodeJs, FaGitAlt } from "react-icons/fa";
-import homeImage from "@/public/home.png";
-import books from "@/public/books4books.png";
-import {
-  SiTailwindcss,
-  SiTypescript,
-  SiMongodb,
-  SiPostgresql,
-} from "react-icons/si";
+import homeImage from "../Assets/home.png";
+import books from "../Assets/books4books.png";
 
 import {
   Card,
