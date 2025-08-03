@@ -10,44 +10,44 @@ const CmdMode = () => {
   const projects = [
     {
       key: "a",
-      name: "AniFinder",
+      name: "TaskFlow",
+      synopsis: "Real-time collaborative project management.",
+      description:
+        "TaskFlow is an intuitive project management and team collaboration platform designed to streamline workflows and boost productivity. It features real-time task tracking, organized project boards, and built-in team communication, all presented in a clean, responsive interface. Built with React and Tailwind CSS, TaskFlow delivers a seamless, fully interactive frontend experience that simulates a modern SaaS workflow..",
+      demo: "https://task-flow-steel-phi.vercel.app/",
+      github: "https://github.com/creeksonJoseph/Task-flow",
+      tech: "Figma for UI/UX design,React,Tailwind CSS",
+    },
+    {
+      key: "b",
+      name: "AniHaven",
       synopsis: "Search and discover anime with previews & recommendations.",
       description:
         "AniHaven is a dynamic content discovery platform that mimics the search and recommendation systems used by modern streaming services. It allows users to search anime titles, watch previews, view metadata, and discover recommendations based on trending content. Built this with JavaScript and powered by JIKAN API, a public API for anime. Main goal was to learn DOM manipulation and master the  REST API CRUD operations.",
       demo: "https://creeksonjoseph.github.io/AniHaven/",
       github: "https://github.com/creeksonJoseph/AniHaven",
-      tech: "React, TypeScript, Jikan API, Tailwind CSS",
+      tech: "Vanilla js, Jikan API, Tailwind CSS",
     },
     {
-      key: "b",
+      key: "c",
       name: "Books for books",
       synopsis: "Browse, manage, and exchange books online.",
       description:
         "BOOK 4 BOOK is a modern web application designed to allow users to sign up, log in, browse and manage books, create reading playlists, and exchange books with others in the community.",
       demo: "https://phase-2-project-group-kappa.vercel.app/",
-      github: "https://github.com/creeksonJoseph/phase-2-project-group",
-      tech: "React, Node.js, MongoDB, Chart.js",
+      github: "https://github.com/creeksonJoseph/Book4Books",
+      tech: "React, Javascript,Tailwind CSS",
     },
-    {
-      key: "c",
-      name: "DeadTime",
-      synopsis: "Gamified productivity app with streaks and XP.",
-      description:
-        "A gamified productivity app that makes completing tasks addictive with streaks and XP.",
-      demo: "https://deadtime.dev",
-      github: "https://github.com/creeksonJoseph/404",
-      tech: "React, Firebase, PWA, Framer Motion",
-    },
-    {
-      key: "d",
-      name: "TaskFlow",
-      synopsis: "Real-time collaborative project management.",
-      description:
-        "Collaborative project management with real-time updates and team communication.",
-      demo: "https://taskflow.app",
-      github: "https://github.com/joseph/taskflow",
-      tech: "React, Socket.io, Express, PostgreSQL",
-    },
+    // {
+    //   key: "c",
+    //   name: "DeadTime",
+    //   synopsis: "Gamified productivity app with streaks and XP.",
+    //   description:
+    //     "A gamified productivity app that makes completing tasks addictive with streaks and XP.",
+    //   demo: "https://deadtime.dev",
+    //   github: "https://github.com/creeksonJoseph/404",
+    //   tech: "React, Firebase, PWA, Framer Motion",
+    // },
   ];
 
   const introMessages = [

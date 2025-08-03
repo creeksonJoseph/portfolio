@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { FaReact, FaNodeJs, FaGitAlt } from "react-icons/fa";
 import homeImage from "../Assets/home.png";
 import books from "../Assets/books4books.png";
+import taskflow from "../Assets/Taskflow.png";
 
 import {
   Card,
@@ -176,7 +177,16 @@ const GuiMode = () => {
 
   const projects = [
     {
-      name: "AniFinder",
+      name: "TaskFlow",
+      description:
+        "TaskFlow is an intuitive project management and team collaboration platform designed to streamline workflows and boost productivity. It features real-time task tracking, organized project boards, and built-in team communication, all presented in a clean, responsive interface. Built with React and Tailwind CSS, TaskFlow delivers a seamless, fully interactive frontend experience that simulates a modern SaaS workflow.",
+      demo: "https://task-flow-steel-phi.vercel.app/",
+      github: "https://github.com/creeksonJoseph/Task-flow",
+      tech: "React, Socket.io, Express, PostgreSQL",
+      imageUrl: taskflow,
+    },
+    {
+      name: "AniHaven",
       description:
         "AniHaven is a dynamic content discovery platform that mimics the search and recommendation systems used by modern streaming services. It allows users to search anime titles, watch previews, view metadata, and discover recommendations based on trending content. Built this with JavaScript and powered by JIKAN API, a public API for anime.Main goal was to learn DOM manipulation and master the Full REST API CRUD operations.",
       demo: "https://creeksonjoseph.github.io/AniHaven/",
@@ -189,34 +199,27 @@ const GuiMode = () => {
       description:
         "BOOK 4 BOOK is a modern web application designed to allow users to sign up, log in, browse and manage books, create reading playlists, and exchange books with others in the community.",
       demo: "https://phase-2-project-group-kappa.vercel.app/",
-      github: "https://github.com/creeksonJoseph/phase-2-project-group",
+      github: "https://github.com/creeksonJoseph/Book4Books",
       tech: "React, Node.js, MongoDB, Chart.js",
       imageUrl: books,
     },
-    {
-      name: "DeadTime",
-      description:
-        "A gamified productivity app that makes completing tasks addictive with streaks and XP.",
-      demo: "https://deadtime.dev",
-      github: "https://github.com/creeksonJoseph/404",
-      tech: "React, Firebase, PWA, Framer Motion",
-    },
-    {
-      name: "TaskFlow",
-      description:
-        "Collaborative project management with real-time updates and team communication.",
-      demo: "https://taskflow.app",
-      github: "https://github.com/joseph/taskflow",
-      tech: "React, Socket.io, Express, PostgreSQL",
-    },
-    {
-      name: "CodeSnippet",
-      description:
-        "Developer tool for organizing and sharing code snippets with syntax highlighting.",
-      demo: "https://codesnippet.dev",
-      github: "https://github.com/joseph/codesnippet",
-      tech: "React, Prism.js, Firebase, Material-UI",
-    },
+    // {
+    //   name: "DeadTime",
+    //   description:
+    //     "A gamified productivity app that makes completing tasks addictive with streaks and XP.",
+    //   demo: "https://deadtime.dev",
+    //   github: "https://github.com/creeksonJoseph/404",
+    //   tech: "React, Firebase, PWA, Framer Motion",
+    // },
+
+    // {
+    //   name: "CodeSnippet",
+    //   description:
+    //     "Developer tool for organizing and sharing code snippets with syntax highlighting.",
+    //   demo: "https://codesnippet.dev",
+    //   github: "https://github.com/joseph/codesnippet",
+    //   tech: "React, Prism.js, Firebase, Material-UI",
+    // },
   ];
 
   return (
