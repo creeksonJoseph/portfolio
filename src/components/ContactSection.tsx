@@ -4,7 +4,7 @@ const contacts = [
   {
     name: "WhatsApp",
     icon: MessageCircle,
-    href: "https://wa.me/0782295126",
+    href: "https://wa.me/254782295126",
     color: "text-neon-green hover:text-neon-green-glow",
   },
   {
