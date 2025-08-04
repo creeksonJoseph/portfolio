@@ -36,7 +36,7 @@ const CmdMode = () => {
         "TaskFlow is an intuitive project management and team collaboration platform designed to streamline workflows and boost productivity. It features real-time task tracking, organized project boards, and built-in team communication, all presented in a clean, responsive interface. Built with React and Tailwind CSS, TaskFlow delivers a seamless, fully interactive frontend experience that simulates a modern SaaS workflow..",
       demo: "https://task-flow-e57q.vercel.app/",
       github: "https://github.com/creeksonJoseph/Task-flow",
-      tech: "Figma for UI/UX design,React,Tailwind CSS",
+      tech: "Google stitch for UI/UX design,React,Tailwind CSS",
     },
     {
       key: "d",
