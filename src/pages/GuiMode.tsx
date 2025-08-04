@@ -5,6 +5,7 @@ import { FaReact, FaNodeJs, FaGitAlt } from "react-icons/fa";
 import homeImage from "../Assets/home.png";
 import books from "../Assets/books4books.png";
 import taskflow from "../Assets/Taskflow.png";
+import realtalk from "../Assets/realtalk.png";
 
 import {
   Card,
@@ -177,15 +178,6 @@ const GuiMode = () => {
 
   const projects = [
     {
-      name: "TaskFlow",
-      description:
-        "TaskFlow is an intuitive project management and team collaboration platform designed to streamline workflows and boost productivity. It features real-time task tracking, organized project boards, and built-in team communication, all presented in a clean, responsive interface. Built with React and Tailwind CSS, TaskFlow delivers a seamless, fully interactive frontend experience that simulates a modern SaaS workflow.",
-      demo: "https://task-flow-steel-phi.vercel.app/",
-      github: "https://github.com/creeksonJoseph/Task-flow",
-      tech: "React, Socket.io, Express, PostgreSQL",
-      imageUrl: taskflow,
-    },
-    {
       name: "AniHaven",
       description:
         "AniHaven is a dynamic content discovery platform that mimics the search and recommendation systems used by modern streaming services. It allows users to search anime titles, watch previews, view metadata, and discover recommendations based on trending content. Built this with JavaScript and powered by JIKAN API, a public API for anime.Main goal was to learn DOM manipulation and master the Full REST API CRUD operations.",
@@ -193,6 +185,24 @@ const GuiMode = () => {
       github: "https://github.com/creeksonJoseph/AniHaven",
       tech: "React, TypeScript, Jikan API, Tailwind CSS",
       imageUrl: homeImage,
+    },
+    {
+      name: "Real-Talk",
+      description:
+        "Real-Talk is a modern social micro‑blogging app where users can post text updates, share images and videos, and interact in a clean, minimal interface. Built with React and Tailwind CSS, it focuses on speed, simplicity, and an engaging user experience.",
+      demo: "https://realtalk-two.vercel.app/",
+      github: "https://github.com/creeksonJoseph/Realtalk/",
+      tech: "React, Socket.io, Express, PostgreSQL",
+      imageUrl: realtalk,
+    },
+    {
+      name: "TaskFlow",
+      description:
+        "TaskFlow is an intuitive project management and team collaboration platform designed to streamline workflows and boost productivity. It features real-time task tracking, organized project boards, and built-in team communication, all presented in a clean, responsive interface. Built with React and Tailwind CSS, TaskFlow delivers a seamless, fully interactive frontend experience that simulates a modern SaaS workflow.",
+      demo: "https://task-flow-steel-phi.vercel.app/",
+      github: "https://github.com/creeksonJoseph/Task-flow",
+      tech: "React, Socket.io, Express, PostgreSQL",
+      imageUrl: taskflow,
     },
     {
       name: "Books for books",

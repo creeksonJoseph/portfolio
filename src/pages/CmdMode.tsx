@@ -10,16 +10,6 @@ const CmdMode = () => {
   const projects = [
     {
       key: "a",
-      name: "TaskFlow",
-      synopsis: "Real-time collaborative project management.",
-      description:
-        "TaskFlow is an intuitive project management and team collaboration platform designed to streamline workflows and boost productivity. It features real-time task tracking, organized project boards, and built-in team communication, all presented in a clean, responsive interface. Built with React and Tailwind CSS, TaskFlow delivers a seamless, fully interactive frontend experience that simulates a modern SaaS workflow..",
-      demo: "https://task-flow-steel-phi.vercel.app/",
-      github: "https://github.com/creeksonJoseph/Task-flow",
-      tech: "Figma for UI/UX design,React,Tailwind CSS",
-    },
-    {
-      key: "b",
       name: "AniHaven",
       synopsis: "Search and discover anime with previews & recommendations.",
       description:
@@ -29,7 +19,27 @@ const CmdMode = () => {
       tech: "Vanilla js, Jikan API, Tailwind CSS",
     },
     {
+      key: "b",
+      name: "Real-Talk",
+      synopsis: "a micro-blogging app",
+      description:
+        "Real-Talk is a modern social micro‑blogging app where users can post text updates, share images and videos, and interact in a clean, minimal interface. Built with React and Tailwind CSS, it focuses on speed, simplicity, and an engaging user experience.",
+      demo: "https://realtalk-two.vercel.app/",
+      github: "https://github.com/creeksonJoseph/Realtalk/",
+      tech: "Figma for UI/UX design,React,Tailwind CSS",
+    },
+    {
       key: "c",
+      name: "TaskFlow",
+      synopsis: "Real-time collaborative project management.",
+      description:
+        "TaskFlow is an intuitive project management and team collaboration platform designed to streamline workflows and boost productivity. It features real-time task tracking, organized project boards, and built-in team communication, all presented in a clean, responsive interface. Built with React and Tailwind CSS, TaskFlow delivers a seamless, fully interactive frontend experience that simulates a modern SaaS workflow..",
+      demo: "https://task-flow-steel-phi.vercel.app/",
+      github: "https://github.com/creeksonJoseph/Task-flow",
+      tech: "Figma for UI/UX design,React,Tailwind CSS",
+    },
+    {
+      key: "d",
       name: "Books for books",
       synopsis: "Browse, manage, and exchange books online.",
       description:
