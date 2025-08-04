@@ -13,7 +13,7 @@ const CmdMode = () => {
       name: "AniHaven",
       synopsis: "Search and discover anime with previews & recommendations.",
       description:
-        "AniHaven is a dynamic content discovery platform that mimics the search and recommendation systems used by modern streaming services. It allows users to search anime titles, watch previews, view metadata, and discover recommendations based on trending content. Built this with JavaScript and powered by JIKAN API, a public API for anime. Main goal was to learn DOM manipulation and master the  REST API CRUD operations.",
+        "AniHaven is a dynamic content discovery platform that mimics the search and recommendation systems used by modern streaming services. It allows users to search anime titles, watch previews, view metadata, and discover recommendations based on trending content. Built this with JavaScript and powered by JIKAN API, a public API for anime.",
       demo: "https://creeksonjoseph.github.io/AniHaven/",
       github: "https://github.com/creeksonJoseph/AniHaven",
       tech: "Vanilla js, Jikan API, Tailwind CSS",
