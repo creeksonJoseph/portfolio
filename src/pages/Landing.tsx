@@ -46,9 +46,8 @@ const HourglassIcon = () => (
 );
 
 const Landing = () => {
-  const fullText = "Welcome to Joseph’s Haven"; // ✅ exact sentence
-  const characters = Array.from(fullText); // handles special apostrophes correctly
-
+  const fullText = "Welcome to Joseph’s Haven";
+  const characters = Array.from(fullText);
   const [displayText, setDisplayText] = useState("");
   const [showContent, setShowContent] = useState(false);
 
