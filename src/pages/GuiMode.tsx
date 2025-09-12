@@ -247,7 +247,7 @@ const GuiMode = () => {
                 textShadow: "0 0 20px hsl(var(--neon-green) / 0.5)",
               }}
             >
-              Joseph's Haven
+              Hi, I'm Joseph
             </h1>
             <Link to="/cmd">
               <Button
