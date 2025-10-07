@@ -20,6 +20,16 @@ const CmdMode = () => {
     },
     {
       key: "b",
+      name: "FitFam",
+      synopsis: "Social fitness platform for tracking workouts & challenges.",
+      description:
+        "FitFam is a social fitness platform where friends can track their workouts, share progress, compete in challenges, and stay accountable together. It's a space built to make fitness fun, consistent, and community-driven - where motivation comes from your circle, not just your screen.",
+      demo: "https://fit-fam-eight.vercel.app/",
+      github: "https://github.com/ogzacky75/Group_fitness_app",
+      tech: "React, TypeScript, Node.js, MongoDB",
+    },
+    {
+      key: "c",
       name: "AniHaven",
       synopsis: "Search and discover anime with previews & recommendations.",
       description:
