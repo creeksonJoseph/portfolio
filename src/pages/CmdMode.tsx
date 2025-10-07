@@ -26,7 +26,7 @@ const CmdMode = () => {
         "FitFam is a social fitness platform where friends can track their workouts, share progress, compete in challenges, and stay accountable together. It's a space built to make fitness fun, consistent, and community-driven - where motivation comes from your circle, not just your screen.",
       demo: "https://fit-fam-eight.vercel.app/",
       github: "https://github.com/ogzacky75/Group_fitness_app",
-      tech: "React, TypeScript, Node.js, MongoDB",
+      tech: "Javascript, React, Python, Flask, PostgreSQL",
     },
     {
       key: "c",
@@ -122,10 +122,17 @@ const CmdMode = () => {
         setSelectedSection("why");
         output.push("=== Why Hire Joseph ===");
         output.push(
-          "I craft sleek, high-performance and responsive web apps with React + Tailwind."
+          "I like solving puzzles, but instead of pieces, I use code. I transform ideas into software by blending design and functionality. I craft software that's secure, creating digital experiences that are fast and effortless to use."
         );
-        output.push("Skills: HTML, JavaScript, React, Tailwind CSS");
-        output.push("Tools: Git/GitHub, Figma for UX/UI design");
+        output.push("");
+        output.push(
+          "If you've got the idea, I've got the code. Let's make your idea touch the internet."
+        );
+        output.push("");
+        output.push(
+          "Skills: HTML, JavaScript, React, Tailwind CSS, Python, Flask"
+        );
+        output.push("Tools: Git/GitHub, Figma, Postman, SQLite/PostgreSQL");
         output.push("Type 'cd ..' to return to menu");
         break;
 

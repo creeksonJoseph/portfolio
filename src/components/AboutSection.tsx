@@ -1,17 +1,27 @@
-import { FaHtml5, FaReact, FaGitAlt, FaFigma } from "react-icons/fa";
+import { FaHtml5, FaReact, FaGitAlt, FaFigma, FaPython } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
-import { SiTailwindcss } from "react-icons/si";
+import {
+  SiTailwindcss,
+  SiFlask,
+  SiPostman,
+  SiSqlite,
+  SiPostgresql,
+} from "react-icons/si";
 
 const skills = [
   { name: "HTML", icon: FaHtml5 },
   { name: "JavaScript", icon: IoLogoJavascript },
   { name: "React", icon: FaReact },
   { name: "Tailwind CSS", icon: SiTailwindcss },
+  { name: "Python", icon: FaPython },
+  { name: "Flask", icon: SiFlask },
 ];
 
 const tools = [
   { name: "Git/GitHub", icon: FaGitAlt },
   { name: "Figma", icon: FaFigma },
+  { name: "Postman", icon: SiPostman },
+  { name: "PostgreSQL", icon: SiPostgresql },
 ];
 
 const AboutSection = () => {
@@ -24,10 +34,18 @@ const AboutSection = () => {
         </h2>
 
         {/* Description */}
-        <p className="text-xl md:text-2xl text-center mb-16 text-foreground font-gui max-w-4xl mx-auto">
-          I craft sleek, high-performance web apps with next-level UI using
-          JavaScript, React, and Tailwind CSS.
-        </p>
+        <div className="text-xl md:text-2xl text-center mb-16 text-foreground font-gui max-w-4xl mx-auto">
+          <p className="mb-4">
+            I like solving puzzles, but instead of pieces, I use code. I
+            transform ideas into software by blending design and functionality.
+            I craft software that's secure, creating digital experiences that
+            are fast and effortless to use.
+          </p>
+          <p className="text-neon-yellow">
+            If you've got the idea, I've got the code. Let's make your idea
+            touch the internet.
+          </p>
+        </div>
 
         {/* Skills and Tools */}
         <div className="grid md:grid-cols-2 gap-12">
@@ -36,7 +54,7 @@ const AboutSection = () => {
             <h3 className="text-2xl font-gui font-semibold text-neon-yellow mb-8 text-center">
               Skills
             </h3>
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               {skills.map((skill, index) => (
                 <div
                   key={skill.name}
@@ -61,7 +79,7 @@ const AboutSection = () => {
             <h3 className="text-2xl font-gui font-semibold text-neon-yellow mb-8 text-center">
               Tools
             </h3>
-            <div className="grid grid-cols-1 gap-6 max-w-md mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {tools.map((tool, index) => (
                 <div
                   key={tool.name}

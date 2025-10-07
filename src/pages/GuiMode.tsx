@@ -191,7 +191,7 @@ const GuiMode = () => {
         "FitFam is a social fitness platform where friends can track their workouts, share progress, compete in challenges, and stay accountable together. It's a space built to make fitness fun, consistent, and community-driven - where motivation comes from your circle, not just your screen.",
       demo: "https://fit-fam-eight.vercel.app/",
       github: "https://github.com/ogzacky75/Group_fitness_app",
-      tech: "React, TypeScript, Node.js, MongoDB",
+      tech: "Javascript, React, Python, Flask, PostgreSQL",
       imageUrl: fitfamImage,
     },
     {
