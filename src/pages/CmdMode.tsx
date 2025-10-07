@@ -46,7 +46,7 @@ const CmdMode = () => {
     "> Joseph is pleased to have you here",
     "Available commands:",
     "• [cd projects] - View Projects",
-    "• [cd about] - Why Hire Me",
+    "• [cd about] - My Story",
     "• [cd contacts] - Let's Talk",
     "• [cd ..] - to go back",
     "• [clear] - Clear the screen",
@@ -120,7 +120,7 @@ const CmdMode = () => {
 
       case "cd about":
         setSelectedSection("why");
-        output.push("=== About Joseph ===");
+        output.push("=== My Story ===");
         output.push(
           "I like solving puzzles, but instead of pieces, I use code. I transform ideas into software by blending design and functionality. I craft software that's secure, creating digital experiences that are fast and effortless to use."
         );
@@ -150,7 +150,7 @@ const CmdMode = () => {
       case "help":
         output.push("=== Help ===");
         output.push("[cd projects] - View Projects");
-        output.push("[cd about] - Why Hire Me");
+        output.push("[cd about] - My Story");
         output.push("[cd contacts] - Let's Talk");
         output.push("[clear] - Clear the screen");
         output.push("[cd ..] - To go back");
