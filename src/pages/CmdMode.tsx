@@ -120,7 +120,7 @@ const CmdMode = () => {
 
       case "cd about":
         setSelectedSection("why");
-        output.push("=== Why Hire Joseph ===");
+        output.push("=== About Joseph ===");
         output.push(
           "I like solving puzzles, but instead of pieces, I use code. I transform ideas into software by blending design and functionality. I craft software that's secure, creating digital experiences that are fast and effortless to use."
         );
@@ -132,7 +132,7 @@ const CmdMode = () => {
         output.push(
           "Skills: HTML, JavaScript, React, Tailwind CSS, Python, Flask"
         );
-        output.push("Tools: Git/GitHub, Figma, Postman, SQLite/PostgreSQL");
+        output.push("Tools: Git/GitHub, Figma, Postman, PostgreSQL");
         output.push("Type 'cd ..' to return to menu");
         break;
 

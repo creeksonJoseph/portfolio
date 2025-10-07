@@ -30,7 +30,7 @@ const AboutSection = () => {
       <div className="max-w-6xl mx-auto">
         {/* Title */}
         <h2 className="text-4xl md:text-5xl font-gui font-bold text-center mb-8 text-neon-green">
-          Why Hire Me
+          My Story
         </h2>
 
         {/* Description */}
