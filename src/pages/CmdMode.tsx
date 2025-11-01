@@ -8,18 +8,18 @@ const CmdMode = () => {
   const bottomRef = useRef<HTMLDivElement>(null);
 
   const projects = [
+    // {
+    //   key: "a",
+    //   name: "Deadtime",
+    //   synopsis: "Digital graveyard for abandoned developer projects.",
+    //   description:
+    //     "Deadtime is a digital graveyard where developers can bury their abandoned projects with dignity, revive forgotten ideas and give them new life, discover hidden gems from other developers, and build a community around project resurrection. Think of it as GitHub meets archaeology - where every abandoned repository has a chance at redemption.",
+    //   demo: "https://deadtime2.vercel.app/",
+    //   github: "https://github.com/creeksonJoseph/Deadtime/",
+    //   tech: "React, TypeScript, Node.js, MongoDB",
+    // },
     {
       key: "a",
-      name: "Deadtime",
-      synopsis: "Digital graveyard for abandoned developer projects.",
-      description:
-        "Deadtime is a digital graveyard where developers can bury their abandoned projects with dignity, revive forgotten ideas and give them new life, discover hidden gems from other developers, and build a community around project resurrection. Think of it as GitHub meets archaeology - where every abandoned repository has a chance at redemption.",
-      demo: "https://deadtime2.vercel.app/",
-      github: "https://github.com/creeksonJoseph/Deadtime/",
-      tech: "React, TypeScript, Node.js, MongoDB",
-    },
-    {
-      key: "b",
       name: "FitFam",
       synopsis: "Social fitness platform for tracking workouts & challenges.",
       description:
@@ -29,7 +29,7 @@ const CmdMode = () => {
       tech: "Javascript, React, Python, Flask, PostgreSQL",
     },
     {
-      key: "c",
+      key: "b",
       name: "AniHaven",
       synopsis: "Search and discover anime with previews & recommendations.",
       description:

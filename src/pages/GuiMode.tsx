@@ -176,15 +176,15 @@ const GuiMode = () => {
   }, [location.state]);
 
   const projects = [
-    {
-      name: "Deadtime",
-      description:
-        "Deadtime is a digital graveyard where developers can bury their abandoned projects with dignity, revive forgotten ideas and give them new life, discover hidden gems from other developers, and build a community around project resurrection. Think of it as GitHub meets archaeology - where every abandoned repository has a chance at redemption.",
-      demo: "https://deadtime2.vercel.app/",
-      github: "https://github.com/creeksonJoseph/Deadtime/",
-      tech: "React, TypeScript, Node.js, MongoDB",
-      imageUrl: deadtimeImage,
-    },
+    // {
+    //   name: "Deadtime",
+    //   description:
+    //     "Deadtime is a digital graveyard where developers can bury their abandoned projects with dignity, revive forgotten ideas and give them new life, discover hidden gems from other developers, and build a community around project resurrection. Think of it as GitHub meets archaeology - where every abandoned repository has a chance at redemption.",
+    //   demo: "https://deadtime2.vercel.app/",
+    //   github: "https://github.com/creeksonJoseph/Deadtime/",
+    //   tech: "React, TypeScript, Node.js, MongoDB",
+    //   imageUrl: deadtimeImage,
+    // },
     {
       name: "FitFam",
       description:
